@@ -2,26 +2,26 @@ package com.company;
 
 
 public class WordSplitter {
-    public static String setWordWrap(String lineaToWordWrap, int lenMax){
+    public static String setWordWrap(String lineToWordWrap, int lenMax){
 
         String returnValue = "";
-        String ultimoCarattere = "";
-        int indiceWrap = 0;
+        String lastChar = "";
+        int indexWrap = 0;
         int i = 0;
 
-        if (lineaToWordWrap.length()>lenMax){
+        if (lineToWordWrap.length()>lenMax){
 
 
             for(i=0;i<lenMax;i++){
 
 
-                indiceWrap = lenMax-i;
+                indexWrap = lenMax-i;
 
 
-                ultimoCarattere = String.valueOf(lineaToWordWrap.charAt(indiceWrap)) ;
+                lastChar = String.valueOf(lineToWordWrap.charAt(indexWrap)) ;
 
 
-                if(ultimoCarattere.equals(" ")){
+                if(lastChar.equals(" ")){
                     break;
                 }
 
@@ -31,24 +31,24 @@ public class WordSplitter {
             if(i==lenMax){
 
 
-                returnValue = lineaToWordWrap.substring(0,lenMax).trim();
+                returnValue = lineToWordWrap.substring(0,lenMax).trim();
 
 
-                returnValue = returnValue + "\r\n" + setWordWrap(lineaToWordWrap.substring(lenMax).trim (), lenMax);
+                returnValue = returnValue + "\r\n" + setWordWrap(lineToWordWrap.substring(lenMax).trim (), lenMax);
 
             }else{
 
 
-                returnValue = lineaToWordWrap.substring(0,indiceWrap).trim();
+                returnValue = lineToWordWrap.substring(0,indexWrap).trim();
 
 
-                returnValue = returnValue + "\r\n" + setWordWrap(lineaToWordWrap.substring(indiceWrap). trim(), lenMax);
+                returnValue = returnValue + "\r\n" + setWordWrap(lineToWordWrap.substring(indexWrap). trim(), lenMax);
             }
 
         }else{
 
 
-            returnValue = lineaToWordWrap;
+            returnValue = lineToWordWrap;
 
         }
 
