@@ -48,6 +48,13 @@ import java.net.;
             {
                 System.out.println(e.getMessage());
             }
+            public class ErrorStringEmpty extends Exception {
+
+                ErrorStringEmpty()
+                {
+                    super("Attenzione, stai riferendo una stringa non inizializzata");
+                }
+            }
         }
     }
 }

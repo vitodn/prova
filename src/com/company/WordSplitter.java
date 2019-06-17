@@ -53,6 +53,12 @@ public class WordSplitter {
         }
 
         return returnValue;
+        public class ErrorStringEmpty extends Exception {
 
+            ErrorStringEmpty()
+            {
+                super("Attenzione, stai riferendo una stringa non inizializzata");
+            }
+        }
     }
 }
