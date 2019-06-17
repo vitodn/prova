@@ -4,8 +4,8 @@ package com.company;
 public class WordSplitter {
     public static String setWordWrap(String lineToWordWrap, int lenMax){
 
-        String returnValue = "";
-        String lastChar = "";
+        String returnValue = ", ";
+        String lastChar = ", ";
         int indexWrap = 0;
         int i = 0;
 
